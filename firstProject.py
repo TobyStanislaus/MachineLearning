@@ -50,4 +50,3 @@ def make_input_fn(data_df,label_df, num_epochs=10, shuffle=True, batch_size=32):
 train_input_fn = make_input_fn(dftrain, y_train)
 eval_input_fn = make_input_fn(dfeval, y_eval, num_epochs=1, shuffle=False)
 
-linear_est = tf.estimator.LinearClassifier(feature_columns=feature_columns)
