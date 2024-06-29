@@ -1,17 +1,9 @@
 import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-import os
-os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
-
 import tensorflow as tf
-from tensorflow import keras
-import keras
 
 
-data=pd.read_csv('train.csv')
-y=data.Survived
+testing=pd.read_csv('test.csv')
+model=tf.keras.models.load_model('Titanic Model.keras')
 
 def makeData(data):
   data.Age = data.Age.astype(float)
@@ -49,21 +41,17 @@ def makeData(data):
   X = ((X-X.min()) / (X.max() - X.min()))
   return X
 
-X=makeData(data)
+testX=makeData(testing)
 
-model = keras.Sequential([
-  keras.layers.Dense(128,activation=tf.nn.relu, input_shape=(5,)),
-  keras.layers.Dense(256,activation=tf.nn.relu),
-  keras.layers.Dense(256,activation=tf.nn.relu),
-  keras.layers.Dense(1,activation=tf.nn.sigmoid)
-])
+pred = model.predict(testX)
 
-model.compile(optimizer='adam',
-              loss='binary_crossentropy',
-              metrics=['accuracy'])
-
-model.fit(X,y,epochs=30,batch_size=1)
+for i,row in testing.iterrows():
+  if pred[i]>=0.5:
+    print(row)
+    print('Alive')
+  else:
+    print(row)
+    print('Dead')
+  print()
 
 
-
-model.save('Titanic Model.keras')
