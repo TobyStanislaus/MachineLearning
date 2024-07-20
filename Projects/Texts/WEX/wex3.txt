@@ -1,2 +1,5 @@
-<div class=WEXtitle>Searching...</div>
-<h1 class="highlighted-points">Always excited to do more WEX!</h1>
+<div class=WEXtitle>Dense Air WEX</div>
+<h1 class="highlighted-points">Projects - Data Science</h1>
+For the data science project, I had to conjoin thousands of records of different properties from housing owners. To get this, I had to download ~30 excel sheets off of <a href='https://www.costar.com/' class='link'>Costar</a> and conjoin all of these sheets into one combined sheet.
+
+The use for this was to be fed into the AI NMS website at Dense Air, which can show details of these buildings, so as a result

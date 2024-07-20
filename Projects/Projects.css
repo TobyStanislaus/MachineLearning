@@ -75,7 +75,9 @@
 }
 
 
-
+.link{
+  color:blue;
+}
 
 
 
@@ -116,13 +118,18 @@
 }
 
 .logo-image-siemens{
-  width:90px;
+  width:110px;
   height:20px;
 }
 
-.logo-image-dense-air{
+.logo-image-unknown{
   width:50px;
   height:50px;
+}
+
+.logo-image-dense-air{
+  width:110px;
+  height:30px;
 }
 
 .logo-image-python{
